@@ -1,27 +1,21 @@
-# StarWars2
+# StarWars
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
-## Development server
+# Check out the star wars app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You can visit the app at https://jsoviedo.github.io/starwars/ and test it, we would very much love to hear your feedback! 
 
-## Code scaffolding
+# Collaborators 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- jsoviedo: Joan Sebastián Oviedo Tínjaca
+- javiermedranob: Javier Hely Medrano Bermúdez 
+- anyeli: Anyeli Vianed Ruiz LLano
+- jutinoco: Juan Carlos Tinoco Muñoz
+- visualdemon: Wilber Jurado Guerrero
 
-## Build
+Software Engineering students at the Politecnico Grancolombiano University 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The Star Wars app uses a public API to get the planets, starships, species, people and films data. You can visit the API at https://swapi.co/api/
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Every component in the app has a search bar that can be used to search for a planet, person, film and so on. Take into account that the Search Bar will not find what you are looking for, if it is not typed correctly. 
