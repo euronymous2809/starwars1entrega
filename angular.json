@@ -1,15 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "star-wars2": {
+    "star-wars": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,18 +13,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/star-wars2",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/swiper/css/swiper.css",
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -45,6 +42,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -66,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "star-wars2:build"
+            "browserTarget": "star-wars:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "star-wars2:build:production"
+              "browserTarget": "star-wars:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "star-wars2:build"
+            "browserTarget": "star-wars:build"
           }
         },
         "test": {
@@ -92,7 +90,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -114,15 +112,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "star-wars2:serve"
+            "devServerTarget": "star-wars:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "star-wars2:serve:production"
+              "devServerTarget": "star-wars:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "star-wars2"
+  "defaultProject": "star-wars"
 }
