@@ -27,7 +27,9 @@
               "./node_modules/swiper/css/swiper.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/particles.js/particles.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -121,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "star-wars"
+    }
+  },
+  "defaultProject": "star-wars",
+  "cli": {
+    "analytics": "69b45177-1bea-4a0d-bc94-0d164ed1e49e"
+  }
 }
