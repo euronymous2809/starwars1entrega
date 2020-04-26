@@ -23,8 +23,6 @@ export class PeliculasComponent implements OnInit {
     this.title = 'FILMS INFORMATION';
     this.movie = new Movie('', '', '' , '', '', '');
     this.names = [];
-    /*peli: this.ruta.snapshot.params.pelicula;*/
-    //alert(this.ruta.snapshot.params.peli);
    }
   
   ngOnInit() {

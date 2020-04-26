@@ -13,6 +13,8 @@ import { BannerComponent } from './components/banner/banner.component';
 import { Episodio1Component } from './components/episodio1/episodio1.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
+import { FondoAnimadoComponent } from './components/fondo-animado/fondo-animado.component';
+import { PersonajesComponent } from './personajes/personajes.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     BannerComponent,
     Episodio1Component,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FondoAnimadoComponent,
+    PersonajesComponent
   ],
   imports: [
     BrowserModule,
