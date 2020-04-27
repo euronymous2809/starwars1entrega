@@ -4,26 +4,22 @@ import { Movie } from 'src/app/models/movies';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'app-peliculas',
-  templateUrl: './peliculas.component.html',
-  styleUrls: ['./peliculas.component.css'],
+  selector: 'app-episodio',
+  templateUrl: './episodio.component.html',
+  styleUrls: ['./episodio.component.css'],
   providers: [MoviesService]
 })
-export class PeliculasComponent implements OnInit {
+export class EpisodioComponent implements OnInit {
   public title: string;
   public films: any;
   public movie: Movie;
-  public names: Array<string>;
   public numId: number;
 
   constructor(
-    // tslint:disable-next-line: variable-name
     private _service: MoviesService,
     private ruta: ActivatedRoute
   ) {
-    this.title = 'FILMS INFORMATION';
     this.movie = new Movie('', '', '' , '', '', '');
-    this.names = [];
    }
   
   ngOnInit() {
@@ -34,7 +30,6 @@ export class PeliculasComponent implements OnInit {
         let res: any;
         res = response;
         this.films = res.results;
-        this.getNames();
         this.getMovie(id);
       },
       error => {
@@ -54,22 +49,6 @@ export class PeliculasComponent implements OnInit {
         this.films[id].release_date);
     } catch (err) {
       console.log(err);
-    }
-  }
-  
-  getNames() {
-    for (const i in this.films) {
-      this.names.push(this.films[i].title);
-    }
-  }
-
-  onFindMovie(name: string) {
-    const index: number = this.names.indexOf(name);
-    if (index === -1) {
-      alert('Film not found...');
-    } else {
-      this.getMovie(index);
-      this.numId = this.names.indexOf(name);
     }
   }
 }

@@ -7,7 +7,10 @@
     color: whitesmoke;
     text-align: center;
   }
-    .info {
+  .info {
       text-align: center;
       color: yellow;
+  }
+  a {
+    text-decoration: none;
   }

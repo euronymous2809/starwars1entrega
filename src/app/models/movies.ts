@@ -9,6 +9,6 @@ export class Movie {
         public director: string,
         public producer: string,
         // tslint:disable-next-line: variable-name
-        public release_date: string,
+        public release_date: string
     ) {}
 }

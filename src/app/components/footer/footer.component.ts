@@ -7,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  public title: string;
-
   constructor() {
-    this.title = 'Módulo Front End - Politécnico Grancolombiano - 2019';
   }
 
   ngOnInit() {

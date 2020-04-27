@@ -1,0 +1,13 @@
+<div>
+    <b><h1 class="info">{{movie.title}} Characters</h1></b>
+</div>
+<br><br><br>
+<div class="wrapper">
+  <div *ngFor="let nom of names; let i=index">
+    <img src="./../../../assets/images/personaje{{numPersonaje[i]}}.jpg" class="imagen" alt="">
+    <br><br>
+    <h2>{{nom}}</h2>
+  </div>
+</div>
+<br><br>
+  <button><a [routerLink]="['/episodio', numId]">Regresar</a></button>

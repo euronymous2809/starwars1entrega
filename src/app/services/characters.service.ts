@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
-export class StarpeopleService {
+export class CharactersService {
 
     public url: string;
 
@@ -13,7 +13,7 @@ export class StarpeopleService {
         this.url = 'https://swapi.co/api/';
       }
 
-    getStarpeople() {
+    getCharacters() {
         return this._http.get(this.url + 'people/');
     }
 }

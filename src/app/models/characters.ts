@@ -1,4 +1,4 @@
-export class Starpeople {
+export class Characters {
 
     // Modelo para las naves
     constructor(
