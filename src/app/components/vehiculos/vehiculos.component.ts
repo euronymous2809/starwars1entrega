@@ -48,7 +48,7 @@ export class VehiculosComponent implements OnInit {
           alert("Vehicles not found!");
         }
         
-        for(var i=0; i<this.enlaces.length && i<5; i++){
+        for(var i=0; i<this.enlaces.length && i<10; i++){
           var cadenas = this.enlaces[i].split('/');
           this.numVehiculo.push(cadenas[5]);
            this._service2.getNames(this.enlaces[i]).subscribe(
