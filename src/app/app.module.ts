@@ -15,6 +15,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RouterModule } from '@angular/router';
 import { FondoAnimadoComponent } from './components/fondo-animado/fondo-animado.component';
 import { PersonajesComponent } from './components/personajes/personajes.component';
+import { PlanetasComponent } from './components/planetas/planetas.component';
+import { EspeciesComponent } from './components/especies/especies.component';
+import { NavesComponent } from './components/naves/naves.component';
+import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { PersonajesComponent } from './components/personajes/personajes.componen
     EpisodioComponent,
     PageNotFoundComponent,
     FondoAnimadoComponent,
-    PersonajesComponent
+    PersonajesComponent,
+    PlanetasComponent,
+    EspeciesComponent,
+    NavesComponent,
+    VehiculosComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,11 @@ import { PersonajesComponent } from './components/personajes/personajes.componen
     RouterModule.forRoot([
       { path: 'peliculas/:id', component: PeliculasComponent},
       { path: 'episodio/:id', component: EpisodioComponent},
-      { path: 'personajes/:id', component: PersonajesComponent}
+      { path: 'personajes/:id', component: PersonajesComponent},
+      { path: 'planetas/:id', component: PlanetasComponent},
+      { path: 'especies/:id', component: EspeciesComponent},
+      { path: 'naves/:id', component: NavesComponent},
+      { path: 'vehiculos/:id', component: VehiculosComponent}
     ]),
     routing,
     HttpClientModule

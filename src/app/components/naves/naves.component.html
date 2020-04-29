@@ -1,0 +1,15 @@
+<div>
+    <b><h1 class="info">{{movie.title}} Starships</h1></b>
+</div>
+<br><br><br>
+<div class="wrapper">
+  <div *ngFor="let nom of names; let i=index">
+    <img src="./../../../assets/images/nave{{numNave[i]}}.jpg" class="imagen" alt="">
+    <br><br>
+    <h2>{{nom}}</h2>
+  </div>
+</div>
+<br><br>
+  <a [routerLink]="['/episodio', numId]">
+    <img src="./../../../assets/images/boton-atras.png">
+  </a>

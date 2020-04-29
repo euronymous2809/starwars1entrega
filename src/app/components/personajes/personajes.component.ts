@@ -44,10 +44,13 @@ export class PersonajesComponent implements OnInit {
         this.getMovie2(id);
         this.getMovie(id);
         this.enlaces = Array.from(this.films[id].characters);
+        if(this.enlaces.length == 0) {
+          alert("Characters not found!");
+        }
         
-        for(var i=0; i<this.enlaces.length && i<5; i++){
+        for(var i=0; i<this.enlaces.length && i<10; i++){
           var cadenas = this.enlaces[i].split('/');
-          this.numPersonaje[i] = cadenas[5];
+          this.numPersonaje.push(cadenas[5]);
            this._service2.getNames(this.enlaces[i]).subscribe(
              response => {
                let res: any;

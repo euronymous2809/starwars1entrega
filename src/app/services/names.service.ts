@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 
@@ -12,7 +12,8 @@ export class NamesService {
         
       }
 
-    getNames(url: String) {
-        return this._http.get(url+'');
+    getNames(url) {
+
+        return this._http.get(url);
     }
 }

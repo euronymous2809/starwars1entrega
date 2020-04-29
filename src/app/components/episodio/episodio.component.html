@@ -11,25 +11,35 @@
       </a>
     </div>
     <div class="box b">
-      <img src="./../../../assets/images/Planetas.png" alt="">
-      <br><br>
-      <h2>PLANETS</h2>
+      <a [routerLink]="['/planetas', numId]">
+        <img src="./../../../assets/images/Planetas.png" alt="">
+        <br><br>
+        <h2>PLANETS</h2>
+      </a>
     </div>
     <div class="box c">
-      <img src="./../../../assets/images/Razas.png" alt="">
-      <br><br>
-      <h2>SPECIES</h2>
+      <a [routerLink]="['/especies', numId]">
+        <img src="./../../../assets/images/Razas.png" alt="">
+        <br><br>
+        <h2>SPECIES</h2>
+      </a>
     </div>
     <div class="box d">
-      <img src="./../../../assets/images/Naves.png" alt="">
-      <br><br>
-      <h2>STARSHIPS</h2>
+      <a [routerLink]="['/naves', numId]">
+        <img src="./../../../assets/images/Naves.png" alt="">
+        <br><br>
+        <h2>STARSHIPS</h2>
+      </a>
     </div>
     <div class="box e">
-      <img src="./../../../assets/images/Vehiculos.png" alt="">
-      <br><br>
-      <h2>VEHICLES</h2>
+      <a [routerLink]="['/vehiculos', numId]">
+        <img src="./../../../assets/images/Vehiculos.png" alt="">
+        <br><br>
+        <h2>VEHICLES</h2>
+    </a>
     </div>
   </div>
   <br><br>
-  <button><a [routerLink]="['/peliculas', numId]">Regresar</a></button>
+    <a [routerLink]="['/peliculas', numId]">
+      <img src="./../../../assets/images/boton-atras.png">
+    </a>
