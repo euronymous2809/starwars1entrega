@@ -1,32 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { PlanetasService} from 'src/app/services/planetas.service';
 import { Planet } from 'src/app/models/planet';
-import { ActivatedRoute, Params } from '@angular/router';
+import { MAT_DIALOG_DATA } from '@angular/material'
 
 @Component({
   selector: 'app-pop-up-planeta',
   templateUrl: './pop-up-planeta.component.html',
-  styleUrls: ['./pop-up-planeta.component.css'],
-  providers: [PlanetasService]
+  styleUrls: ['./pop-up-planeta.component.css']
 })
 export class PopUpPlanetaComponent implements OnInit {
   public details: any;
-  public numId: number;
   public planet: Planet;
 
   constructor(
-    private _service: PlanetasService,
-    private ruta: ActivatedRoute
+    @Inject(MAT_DIALOG_DATA) public numPlaneta: number,
+    private _service: PlanetasService, 
 
   ) {
     this.planet = new Planet('', '', '' , '', '', '', '', '', '');
-
    }
   
   ngOnInit() {
-    let id = +this.ruta.snapshot.paramMap.get('id');
-    this.numId = +this.ruta.snapshot.paramMap.get('id');
-    this._service.getPlanets(id).subscribe(
+    
+    this._service.getPlanets(this.numPlaneta).subscribe(
       response => {
         let res: any;
         res = response;

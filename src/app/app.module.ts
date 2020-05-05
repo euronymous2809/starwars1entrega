@@ -20,6 +20,11 @@ import { EspeciesComponent } from './components/especies/especies.component';
 import { NavesComponent } from './components/naves/naves.component';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { PopUpPlanetaComponent } from './components/pop-up-planeta/pop-up-planeta.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PlanetasService} from 'src/app/services/planetas.service';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -53,10 +58,17 @@ import { PopUpPlanetaComponent } from './components/pop-up-planeta/pop-up-planet
       { path: 'pop-up-planeta/:id', component: PopUpPlanetaComponent}
     ]),
     routing,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    PopUpPlanetaComponent
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    PlanetasService
   ],
   bootstrap: [AppComponent]
 })
