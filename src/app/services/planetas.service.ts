@@ -10,10 +10,10 @@ export class PlanetasService {
         // tslint:disable-next-line: variable-name
         private _http: HttpClient
     ) {
-        this.url = 'https://swapi.co/api/';
+        this.url = 'https://swapi.py4e.com/api/';
       }
 
-    getPlanets() {
-        return this._http.get(this.url + 'planets/');
+    getPlanets(planeta) {
+        return this._http.get(this.url + 'planets/' + planeta);
     }
 }

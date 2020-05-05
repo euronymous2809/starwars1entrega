@@ -19,6 +19,7 @@ import { PlanetasComponent } from './components/planetas/planetas.component';
 import { EspeciesComponent } from './components/especies/especies.component';
 import { NavesComponent } from './components/naves/naves.component';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
+import { PopUpPlanetaComponent } from './components/pop-up-planeta/pop-up-planeta.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
     PlanetasComponent,
     EspeciesComponent,
     NavesComponent,
-    VehiculosComponent
+    VehiculosComponent,
+    PopUpPlanetaComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
       { path: 'planetas/:id', component: PlanetasComponent},
       { path: 'especies/:id', component: EspeciesComponent},
       { path: 'naves/:id', component: NavesComponent},
-      { path: 'vehiculos/:id', component: VehiculosComponent}
+      { path: 'vehiculos/:id', component: VehiculosComponent},
+      { path: 'pop-up-planeta/:id', component: PopUpPlanetaComponent}
     ]),
     routing,
     HttpClientModule
