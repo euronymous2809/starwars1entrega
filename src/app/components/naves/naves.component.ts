@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { NamesService } from 'src/app/services/names.service';
+import { StarshipsService} from 'src/app/services/starships.service';
 import { Movie } from 'src/app/models/movies';
 import { ArrayMovies } from 'src/app/models/arrayMovies';
 import { ActivatedRoute, Params } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PopUpNaveComponent } from '../pop-up-nave/pop-up-nave.component';
 
 @Component({
   selector: 'app-naves',
   templateUrl: './naves.component.html',
   styleUrls: ['./naves.component.css'],
-  providers: [MoviesService, NamesService]
+  providers: [MoviesService, NamesService, StarshipsService]
 })
 export class NavesComponent implements OnInit {
   public title: string;
@@ -24,7 +27,8 @@ export class NavesComponent implements OnInit {
   constructor(
     private _service: MoviesService,
     private _service2: NamesService,
-    private ruta: ActivatedRoute
+    private ruta: ActivatedRoute,
+    public dialog: MatDialog
   ) {
     this.names = [];
     this.enlaces = [];
@@ -94,5 +98,14 @@ export class NavesComponent implements OnInit {
     } catch (err) {
       console.log(err);
     }
+  }
+
+  abrirDialogo(id: number) {
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.height = "700px";
+    dialogConfig.width = "500px";
+    dialogConfig.data =  id;
+    const modalDialog = this.dialog.open(PopUpNaveComponent, dialogConfig);
   }
 }

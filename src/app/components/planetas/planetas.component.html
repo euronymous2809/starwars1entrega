@@ -5,7 +5,6 @@
 <div class="wrapper">
   <div *ngFor="let nom of names; let i=index">
     <a mat-raised-button (click)="abrirDialogo(numPlaneta[i])">
-      <!--<a [routerLink]="['/pop-up-planeta', numPlaneta[i]]" (click)="clickLink()" ></a>-->
       <img src="./../../../assets/images/planeta{{numPlaneta[i]}}.jpg" class="imagen" alt="">
       <br><br>
       <h2>{{nom}}</h2>

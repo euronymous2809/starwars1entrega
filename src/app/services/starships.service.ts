@@ -10,10 +10,10 @@ export class StarshipsService {
         // tslint:disable-next-line: variable-name
         private _http: HttpClient
     ) {
-        this.url = 'https://swapi.co/api/';
+        this.url = 'https://swapi.py4e.com/api/';
       }
 
-    getStarships() {
-        return this._http.get(this.url + 'starships/');
+    getStarships(nave) {
+        return this._http.get(this.url + 'starships/' + nave);
     }
 }

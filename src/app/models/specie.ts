@@ -1,14 +1,17 @@
 export class Specie {
 
-    // Modelo para razas
+    // Modelo para especies
     constructor(
         public name: string,
-        public language: string,
         public classification: string,
-        // tslint:disable-next-line: variable-name
-        public average_height: string,
         public designation: string,
-        // tslint:disable-next-line: variable-name
+        public average_height: string,
+        public skin_colors: string,
+        public hair_colors: string,
+        public eye_colors: string,
         public average_lifespan: string,
+        public language: string
+                
+        
     ) {}
 }

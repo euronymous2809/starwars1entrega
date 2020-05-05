@@ -10,10 +10,10 @@ export class CharactersService {
         // tslint:disable-next-line: variable-name
         private _http: HttpClient
     ) {
-        this.url = 'https://swapi.co/api/';
+        this.url = 'https://swapi.py4e.com/api/';
       }
 
-    getCharacters() {
-        return this._http.get(this.url + 'people/');
+    getCharacters(personaje) {
+        return this._http.get(this.url + 'people/' + personaje);
     }
 }

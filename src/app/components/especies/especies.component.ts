@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { NamesService } from 'src/app/services/names.service';
+import { SpeciesService} from 'src/app/services/species.service';
 import { Movie } from 'src/app/models/movies';
 import { ArrayMovies } from 'src/app/models/arrayMovies';
 import { ActivatedRoute, Params } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PopUpEspecieComponent } from '../pop-up-especie/pop-up-especie.component';
 
 @Component({
   selector: 'app-especies',
   templateUrl: './especies.component.html',
   styleUrls: ['./especies.component.css'],
-  providers: [MoviesService, NamesService]
+  providers: [MoviesService, NamesService, PopUpEspecieComponent]
 })
 export class EspeciesComponent implements OnInit {
   public title: string;
@@ -24,7 +27,8 @@ export class EspeciesComponent implements OnInit {
   constructor(
     private _service: MoviesService,
     private _service2: NamesService,
-    private ruta: ActivatedRoute
+    private ruta: ActivatedRoute,
+    public dialog: MatDialog
   ) {
     this.names = [];
     this.enlaces = [];
@@ -94,5 +98,14 @@ export class EspeciesComponent implements OnInit {
     } catch (err) {
       console.log(err);
     }
+  }
+
+  abrirDialogo(id: number) {
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.height = "700px";
+    dialogConfig.width = "500px";
+    dialogConfig.data =  id;
+    const modalDialog = this.dialog.open(PopUpEspecieComponent, dialogConfig);
   }
 }

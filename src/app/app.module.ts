@@ -22,9 +22,17 @@ import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { PopUpPlanetaComponent } from './components/pop-up-planeta/pop-up-planeta.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlanetasService} from 'src/app/services/planetas.service';
+import { CharactersService} from 'src/app/services/characters.service';
+import { SpeciesService} from 'src/app/services/species.service';
+import { StarshipsService} from 'src/app/services/starships.service';
+import { VehiclesService} from 'src/app/services/vehicles.service';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material';
+import { PopUpPersonajeComponent } from './components/pop-up-personaje/pop-up-personaje.component';
+import { PopUpEspecieComponent } from './components/pop-up-especie/pop-up-especie.component';
+import { PopUpNaveComponent } from './components/pop-up-nave/pop-up-nave.component';
+import { PopUpVehiculoComponent } from './components/pop-up-vehiculo/pop-up-vehiculo.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +50,11 @@ import { MatDialogModule } from '@angular/material';
     EspeciesComponent,
     NavesComponent,
     VehiculosComponent,
-    PopUpPlanetaComponent
+    PopUpPlanetaComponent,
+    PopUpPersonajeComponent,
+    PopUpEspecieComponent,
+    PopUpNaveComponent,
+    PopUpVehiculoComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +66,8 @@ import { MatDialogModule } from '@angular/material';
       { path: 'planetas/:id', component: PlanetasComponent},
       { path: 'especies/:id', component: EspeciesComponent},
       { path: 'naves/:id', component: NavesComponent},
-      { path: 'vehiculos/:id', component: VehiculosComponent},
-      { path: 'pop-up-planeta/:id', component: PopUpPlanetaComponent}
+      { path: 'vehiculos/:id', component: VehiculosComponent}
+      //{ path: 'pop-up-planeta/:id', component: PopUpPlanetaComponent}
     ]),
     routing,
     HttpClientModule,
@@ -64,11 +76,19 @@ import { MatDialogModule } from '@angular/material';
     MatDialogModule
   ],
   entryComponents: [
-    PopUpPlanetaComponent
+    PopUpPlanetaComponent,
+    PopUpPersonajeComponent,
+    PopUpEspecieComponent,
+    PopUpNaveComponent,
+    PopUpVehiculoComponent
   ],
   providers: [
     appRoutingProviders,
-    PlanetasService
+    CharactersService,
+    PlanetasService,
+    SpeciesService,
+    StarshipsService,
+    VehiclesService
   ],
   bootstrap: [AppComponent]
 })

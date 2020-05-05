@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { NamesService } from 'src/app/services/names.service';
+import { CharactersService } from 'src/app/services/characters.service';
 import { Movie } from 'src/app/models/movies';
 import { ArrayMovies } from 'src/app/models/arrayMovies';
 import { ActivatedRoute, Params } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PopUpPersonajeComponent } from '../pop-up-personaje/pop-up-personaje.component';
 
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
   styleUrls: ['./personajes.component.css'],
-  providers: [MoviesService, NamesService]
+  providers: [MoviesService, NamesService, CharactersService]
 })
 export class PersonajesComponent implements OnInit {
   public title: string;
@@ -24,7 +27,8 @@ export class PersonajesComponent implements OnInit {
   constructor(
     private _service: MoviesService,
     private _service2: NamesService,
-    private ruta: ActivatedRoute
+    private ruta: ActivatedRoute,
+    public dialog: MatDialog
   ) {
     this.names = [];
     this.enlaces = [];
@@ -94,5 +98,14 @@ export class PersonajesComponent implements OnInit {
     } catch (err) {
       console.log(err);
     }
+  }
+
+  abrirDialogo(id: number) {
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.height = "700px";
+    dialogConfig.width = "500px";
+    dialogConfig.data =  id;
+    const modalDialog = this.dialog.open(PopUpPersonajeComponent, dialogConfig);
   }
 }

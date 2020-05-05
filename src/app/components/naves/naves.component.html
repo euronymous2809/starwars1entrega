@@ -4,9 +4,11 @@
 <br><br><br>
 <div class="wrapper">
   <div *ngFor="let nom of names; let i=index">
-    <img src="./../../../assets/images/nave{{numNave[i]}}.jpg" class="imagen" alt="">
-    <br><br>
-    <h2>{{nom}}</h2>
+    <a mat-raised-button (click)="abrirDialogo(numNave[i])">
+      <img src="./../../../assets/images/nave{{numNave[i]}}.jpg" class="imagen" alt="">
+      <br><br>
+      <h2>{{nom}}</h2>
+    </a>
   </div>
 </div>
 <br><br>

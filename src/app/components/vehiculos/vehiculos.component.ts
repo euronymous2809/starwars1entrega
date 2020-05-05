@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { NamesService } from 'src/app/services/names.service';
+import { VehiclesService} from 'src/app/services/vehicles.service';
 import { Movie } from 'src/app/models/movies';
 import { ArrayMovies } from 'src/app/models/arrayMovies';
 import { ActivatedRoute, Params } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PopUpVehiculoComponent } from '../pop-up-vehiculo/pop-up-vehiculo.component';
 
 @Component({
   selector: 'app-vehiculos',
   templateUrl: './vehiculos.component.html',
   styleUrls: ['./vehiculos.component.css'],
-  providers: [MoviesService, NamesService]
+  providers: [MoviesService, NamesService, VehiclesService]
 })
 export class VehiculosComponent implements OnInit {
   public title: string;
@@ -24,7 +27,8 @@ export class VehiculosComponent implements OnInit {
   constructor(
     private _service: MoviesService,
     private _service2: NamesService,
-    private ruta: ActivatedRoute
+    private ruta: ActivatedRoute,
+    public dialog: MatDialog
   ) {
     this.names = [];
     this.enlaces = [];
@@ -94,5 +98,14 @@ export class VehiculosComponent implements OnInit {
     } catch (err) {
       console.log(err);
     }
+  }
+
+  abrirDialogo(id: number) {
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.height = "700px";
+    dialogConfig.width = "500px";
+    dialogConfig.data =  id;
+    const modalDialog = this.dialog.open(PopUpVehiculoComponent, dialogConfig);
   }
 }

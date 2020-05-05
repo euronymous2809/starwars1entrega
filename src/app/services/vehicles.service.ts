@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
-export class SpeciesService {
+export class VehiclesService {
 
     public url: string;
 
@@ -13,7 +13,7 @@ export class SpeciesService {
         this.url = 'https://swapi.py4e.com/api/';
       }
 
-    getSpecies(especie) {
-        return this._http.get(this.url + 'species/' + especie);
+    getVehicles(vehiculo) {
+        return this._http.get(this.url + 'vehicles/' + vehiculo);
     }
 }

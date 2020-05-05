@@ -3,7 +3,6 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { NamesService } from 'src/app/services/names.service';
 import { PlanetasService} from 'src/app/services/planetas.service';
 import { Movie } from 'src/app/models/movies';
-import { Planet } from 'src/app/models/planet';
 import { ArrayMovies } from 'src/app/models/arrayMovies';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -111,5 +110,4 @@ export class PlanetasComponent implements OnInit {
     dialogConfig.data =  id;
     const modalDialog = this.dialog.open(PopUpPlanetaComponent, dialogConfig);
   }
-
 }
