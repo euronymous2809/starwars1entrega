@@ -22,7 +22,7 @@
     "@angular/router": "~8.2.8",
     "gh-pages": "^2.1.1",
     "rxjs": "^6.5.3",
-    "swiper": "^5.3.7",
+    "swiper": "^6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
